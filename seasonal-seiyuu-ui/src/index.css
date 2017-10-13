@@ -16,3 +16,7 @@ body {
 .switch-wrapper {
   position: relative;
 }
+
+.fa-2x {
+  margin-top: 14px;
+}

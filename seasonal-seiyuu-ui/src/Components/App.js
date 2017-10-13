@@ -12,6 +12,7 @@ class App extends Component {
   }
 
   render() {
+    document.title = "Seasonal Seiyuu";
     return (
       <Router>
         <Route path="/" component={MainUI}/>

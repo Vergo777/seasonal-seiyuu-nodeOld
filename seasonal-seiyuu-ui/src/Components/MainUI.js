@@ -23,6 +23,9 @@ class MainUI extends Component {
   render() {
     return (
       <div>
+        <head>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        </head>  
         <Header searchValue={this.state.searchValue} searchBoxChangeHandler={this.searchBoxChangeHandler} />
         <Grid fluid={true}>
           <Row>

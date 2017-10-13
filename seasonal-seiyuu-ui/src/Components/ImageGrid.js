@@ -29,7 +29,7 @@ class ImageGrid extends React.Component {
                         </Link>
                         <div className="text-center caption" style={captionStyle}>
                             <h3>{currentSeiyuuDetails.name}</h3>
-                            <p>{"In " + currentSeiyuuDetails.currentSeasonRolesArray.length + " show(s) this season"}</p>
+                            <p>{"Playing " + currentSeiyuuDetails.currentSeasonRolesArray.length + " character(s) this season"}</p>
                         </div>
                     </div>
                 </Col>
