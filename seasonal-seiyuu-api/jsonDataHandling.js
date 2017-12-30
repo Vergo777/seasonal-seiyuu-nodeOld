@@ -109,7 +109,7 @@ export function getSeriesIDFromURL(URL) {
     try {
         return parseInt(URL.split('/')[4], 10); 
     } catch(e) {
-        console.log("Could not fetch URL in getSeriesIDFromURL");
+        console.log("Could not fetch URL in getSeriesIDFromURL, URL : " + URL);
         throw e;
     }
 };

@@ -1,17 +1,18 @@
 var osmosis = require('osmosis');
 
-// osmosis.get('https://myanimelist.net/anime/season')
-//     .find('p > a')
-//     .set({
-//         link: '@href'
-//     })
-//     .data(function(results) {
-//         // ID = getSeriesIDFromURL(results.link)
-//         // console.log(ID + ",");
+osmosis.get('https://myanimelist.net/anime/season')
+     .find('p > a')
+     .set({
+         link: '@href'
+     })
+     .data(function(results) {
+         ID = getSeriesIDFromURL(results.link)
+         console.log(ID + ",");
 
-//         console.log("\"" + results.link + "\",")
-//     });
+         console.log("\"" + results.link + "\",")
+     });
 
+/*
 showsList = [
     "https://myanimelist.net/anime/35062/Mahoutsukai_no_Yome",
     "https://myanimelist.net/anime/35788/Shokugeki_no_Souma__San_no_Sara",
@@ -81,6 +82,7 @@ showsList = [
 showsList.forEach(function(show) {
     console.log(getSeriesIDFromURL(show) + ",");
 });
+*/
 
 function getSeriesIDFromURL(URL) {
     fields = URL.split('/'); 

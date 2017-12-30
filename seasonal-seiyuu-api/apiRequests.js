@@ -30,8 +30,12 @@ export async function getDetailsForAnimeIDArray(animeIDArray, cache) {
 
         let uncachedAnimeDetailsResults = await Promise.all(animeDetailsPromises); 
         return uncachedAnimeDetailsResults.map(function(uncachedAnimeDetailsResult) {
-            let resultBody = uncachedAnimeDetailsResult.body; 
-            const key = "anime_" + getSeriesIDFromURL(resultBody['link-canonical']);
+            let resultBody = uncachedAnimeDetailsResult.body;
+            let seriesID = getSeriesIDFromURL(resultBody['link-canonical']);
+            if(!seriesID) {
+                throw new Error("Invalid URL for series : " + resultBody);
+            }
+            const key = "anime_" + seriesID;
             cache.set(key, resultBody, cacheTTL);
             return resultBody; 
         }).concat(animeDetailsResults); 
